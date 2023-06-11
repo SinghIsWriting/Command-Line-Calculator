@@ -1,26 +1,17 @@
-/*
+#include <stdio.h>      // sscanf()
+#include <string.h>     // for strcmp()
 
-You have to create a command line utility to add/subtract/multiply/divide two numbers
-First command line argument  of your C program must be the operation.
-The next arguments must being two numbers, Example:
->> command.exe add 23 45
->> 68
-
-*/
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
+// Passing argc and *argv[] to the main() function, argc is number of arguments and *argv[] is the list of given arguments
 int main(int argc, char *argv[])
 {
     printf("\n\n*********** Welcome to Command Line Calculator ***********\n\n");
-    // printf("Number of given arguments %d\n", argc);
+
     int num1, num2;
-    // convert string to integer
-    // int sum = atoi(str);
-    // int sum = (int)strtol(str, NULL, 10);
+    // Converting string argument to the integers
     sscanf(argv[2], "%d", &num1);
     sscanf(argv[3], "%d", &num2);
+
+    // Implementing entered mathematics operations on entered numbers
     if (strcmp(argv[1], "add") == 0){
         int sum;
         sum = num1 + num2;
@@ -49,8 +40,6 @@ int main(int argc, char *argv[])
         printf("Invalid format !!!\n");
         printf("Usage: Excercise13.exe <operation> <num1> <num2>\n\n");
     }
-    // printf("%d\n", sizeof(argv[1]));
-    // printf("argv[1]: %s\n", argv[1]);
 
     return 0;
 }
